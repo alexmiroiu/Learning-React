@@ -27,11 +27,16 @@ const submitHandler = (event) => {
         date: new Date(enteredDate)
     }
 
-    props.onSaveExpenseData(expenseData)
+    props.onSaveExpenseData(expenseData);
 
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
+    props.remove();
+}
+
+const removeForm = () => {
+    props.remove();
 }
 
 return (
@@ -51,6 +56,7 @@ return (
             </div>
         </div>
         <div className="new-expense__actions">
+            <button type="button" onClick={removeForm}>Cancel</button>
             <button type="submit">Add Expense</button>
         </div>
     </form>);
