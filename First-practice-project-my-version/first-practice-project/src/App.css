@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+
+
+.content-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 90vh;
+  width: 40vw;
+}
