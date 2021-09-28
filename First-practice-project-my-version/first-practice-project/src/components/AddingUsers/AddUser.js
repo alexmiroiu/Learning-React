@@ -1,18 +1,26 @@
 import React from 'react';
 
+
 import UserNameInput from './UserNameInput';
 import UserAgeInput from './UserAgeInput';
 
 const AddUser = () => {
+    let userName ;
+
     const getName = (name) => {
-        console.log(name);
+        userName = name;
+    }
+
+    const logTheName = (event) => {
+        event.preventDefault()
+        console.log(userName)
     }
 
     return (
         <form>
             <UserNameInput data={getName}/>
             <UserAgeInput />
-            <button>Add User</button>
+            <button onClick={logTheName}>Add User</button>
         </form>
     )
 }

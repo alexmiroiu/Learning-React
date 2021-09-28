@@ -10,6 +10,7 @@ const UserNameInput = (props) => {
     const getName = (event) => {
         console.log(userName)
         setUserName(event.target.value);
+        props.data(userName)
     }
 
     return (
