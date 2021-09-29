@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
+import styles from './AddUser.module.css';
+import Card from '../UI/Card';
 
 
 const AddUser = (props) => {
@@ -29,17 +31,15 @@ const AddUser = (props) => {
     
 
     return (
-        <form>
-            <div>
-                <label>User Name</label>
-                <input type="text" value={userName} onChange={getName}/>
-            </div>
-            <div>
-                <label>Age (Years)</label>
-                <input type="number" value={userAge} onChange={getAge} />
-            </div>
-            <button onClick={storeData}>Add User</button>
+        <Card>
+        <form className={styles.wrapper}>
+            <label>User Name</label>
+            <input type="text" value={userName} onChange={getName}/>
+            <label>Age (Years)</label>
+            <input type="number" value={userAge} onChange={getAge} />
+            <button type="submit" onClick={storeData}>Add User</button>
         </form>
+        </Card>
     )
 }
 
