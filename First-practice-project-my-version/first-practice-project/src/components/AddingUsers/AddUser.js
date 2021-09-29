@@ -1,26 +1,44 @@
 import React from 'react';
+import {useState} from 'react';
 
 
-import UserNameInput from './UserNameInput';
-import UserAgeInput from './UserAgeInput';
-
-const AddUser = () => {
-    let userName ;
-
-    const getName = (name) => {
-        userName = name;
+const AddUser = (props) => {
+    const[userName, setUserName] = useState('');
+    const[userAge, setUserAge] = useState('');
+    
+    const getName = (event) => {
+        setUserName(event.target.value);
     }
 
-    const logTheName = (event) => {
-        event.preventDefault()
-        console.log(userName)
+    const getAge = (event) => {
+        setUserAge(event.target.value);
     }
+
+    const storeData = (event) => {
+        event.preventDefault();
+        const userData = {
+            name: userName,
+            age: userAge,
+            id: Math.random().toString().slice(0,6)
+        }
+        props.saveUser(userData);
+        setUserName('');
+        setUserAge('');
+    }
+
+    
 
     return (
         <form>
-            <UserNameInput data={getName}/>
-            <UserAgeInput />
-            <button onClick={logTheName}>Add User</button>
+            <div>
+                <label>User Name</label>
+                <input type="text" value={userName} onChange={getName}/>
+            </div>
+            <div>
+                <label>Age (Years)</label>
+                <input type="number" value={userAge} onChange={getAge} />
+            </div>
+            <button onClick={storeData}>Add User</button>
         </form>
     )
 }

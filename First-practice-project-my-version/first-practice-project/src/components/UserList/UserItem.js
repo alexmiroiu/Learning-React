@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './UserItem.module.css';
 
-const UserItem = () => {
+const UserItem = (props) => {
     return (
-        <li className={styles.item}>Alex 32 years old</li>
+        <li className={styles.item}>{props.name} ({props.age} years old)</li>
     )
 }
 

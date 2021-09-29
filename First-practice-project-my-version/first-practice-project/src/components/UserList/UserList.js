@@ -3,11 +3,10 @@ import React from 'react';
 import styles from './UserList.module.css';
 import UserItem from './UserItem';
 
-const UserList = () => {
+const UserList = (props) => {
     return (
         <ul className={styles.list}>
-            <UserItem></UserItem>
-            <UserItem></UserItem>
+            {props.items.map(item => <UserItem name={item.name} age={item.age} key={item.id}></UserItem> )}
         </ul>
     );
 }
