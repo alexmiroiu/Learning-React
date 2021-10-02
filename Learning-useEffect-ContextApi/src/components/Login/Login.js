@@ -75,7 +75,9 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    authCtx.onLogin(emailState.value, passwordState.value);
+    if(formIsValid) {
+      authCtx.onLogin(emailState.value, passwordState.value);
+    } else { return }
   };
 
   return (
@@ -84,7 +86,7 @@ const Login = (props) => {
         <Input isValid={emailIsValid} id={'email'} label={'E-mail'} type={'email'} value={emailState.value} onChange={emailChangeHandler} onBlur={validateEmailHandler} />
         <Input isValid={emailIsValid} id={'password'} label={'Password'} type={'password'} value={passwordState.value} onChange={passwordChangeHandler} onBlur={validatePasswordHandler}/>
         <div className={classes.actions}>
-          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
+          <Button type="submit" className={classes.btn}>
             Login
           </Button>
         </div>
