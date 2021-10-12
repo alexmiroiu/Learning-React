@@ -11,7 +11,7 @@ const AvailableMeals = () => {
     const response = await fetch('https://react-http-e2bde-default-rtdb.europe-west1.firebasedatabase.app/meals.json');
     const data = await response.json();
 
-    let fetchedMeals = []
+    let fetchedMeals = [];
     for(const item in data) {
       fetchedMeals.push({
         id: item,
