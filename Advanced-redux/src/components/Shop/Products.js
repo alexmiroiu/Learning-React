@@ -12,7 +12,7 @@ const Products = (props) => {
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>
       <ul>
-        {FAKE_PRODUCTS.map(product => <ProductItem key={product.id} title={product.title} price={product.price} description={product.description} />)}
+        {FAKE_PRODUCTS.map(product => <ProductItem key={product.id} title={product.title} price={product.price} description={product.description} id={product.id}/>)}
       </ul>
     </section>
   );
