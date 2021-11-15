@@ -3,7 +3,7 @@ import classes from './Products.module.css';
 
 const FAKE_PRODUCTS = [
   {id: 'p1', price: 6, title: 'Some book', description: 'A random book'},
-  {id: 'p1', price: 9, title: 'dune', description: 'Second chapter of dune'}
+  {id: 'p2', price: 9, title: 'dune', description: 'Second chapter of dune'}
 
 ]
 
